@@ -15,5 +15,4 @@ Pod::Spec.new do |s|
 s.source_files = 'AETextFieldValidator/*.{h,m}'
 s.public_header_files = "AETextFieldValidator/TextFieldValidator.h"
 s.resources = "AETextFieldValidator/*.xcassets"
-}
 end
