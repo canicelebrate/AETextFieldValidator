@@ -1,9 +1,9 @@
 //
-//  TextFieldValidator.h
+//  AETextFieldValidator.h
 //  Textfield Validation Handler
 //
-//  Created by Dhawal Dawar on 10/06/2014.
-//  Copyright (c) 2014 Dhawal Dawar. All rights reserved.
+//  Created by William Wang on 10/18/2016.
+//  Copyright (c) 2016 William Wang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -50,7 +50,7 @@
 /**
     TextFieldValidator is the inherited class of UITextField for performing validation effectively. This class will handle all kind of validations with just few lines of code using regex and it is fully customisable. You can easily port this functionality in your existing code as well, you just need to change class name from UITextField to TextFieldValidator and apply regex for performing validation.
  */
-NS_CLASS_AVAILABLE_IOS(6_0) @interface TextFieldValidator : UITextField<UITextFieldDelegate>{
+NS_CLASS_AVAILABLE_IOS(6_0) @interface AETextFieldValidator : UITextField<UITextFieldDelegate>{
 
 }
 
@@ -94,7 +94,7 @@ NS_CLASS_AVAILABLE_IOS(6_0) @interface TextFieldValidator : UITextField<UITextFi
     Use to add validation for validating confirm password
     @param txtPassword Hold reference of password textfield from which they will check text equality.
  */
--(void)addConfirmValidationTo:(TextFieldValidator *)txtPassword withMsg:(NSString *)msg;
+-(void)addConfirmValidationTo:(AETextFieldValidator *)txtPassword withMsg:(NSString *)msg;
 
 /**
     Use to perform validation

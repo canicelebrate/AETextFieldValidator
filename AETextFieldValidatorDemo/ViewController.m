@@ -18,12 +18,12 @@
 #define REGEX_PHONE_DEFAULT @"[0-9]{3}\\-[0-9]{3}\\-[0-9]{4}"
 
 @interface ViewController ()<UITextFieldDelegate>{
-    IBOutlet TextFieldValidator *txtUserName;
-    IBOutlet TextFieldValidator *txtEmail;
-    IBOutlet TextFieldValidator *txtPassword;
-    IBOutlet TextFieldValidator *txtConfirmPass;
-    IBOutlet TextFieldValidator *txtPhone;
-    TextFieldValidator *txtDemo;
+    IBOutlet AETextFieldValidator *txtUserName;
+    IBOutlet AETextFieldValidator *txtEmail;
+    IBOutlet AETextFieldValidator *txtPassword;
+    IBOutlet AETextFieldValidator *txtConfirmPass;
+    IBOutlet AETextFieldValidator *txtPhone;
+    AETextFieldValidator *txtDemo;
     
     
     IBOutlet UIView *viewContainer;
@@ -43,7 +43,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [self setupAlerts];
     
-    txtDemo=[[TextFieldValidator alloc] init];
+    txtDemo=[[AETextFieldValidator alloc] init];
     txtDemo.translatesAutoresizingMaskIntoConstraints = NO;
     txtDemo.borderStyle=UITextBorderStyleRoundedRect;
     txtDemo.placeholder=@"Programmatically created - Email";

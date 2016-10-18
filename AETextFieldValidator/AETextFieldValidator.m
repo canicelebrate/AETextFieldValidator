@@ -35,7 +35,6 @@
 @end
 
 @implementation IQPopUp
-//@synthesize showOnRect,popWidth,fieldFrame,popUpColor;
     
 -(instancetype)initWithFrame:(CGRect)frame{
     IQPopUp* this = [super initWithFrame:frame];
@@ -46,81 +45,6 @@
     return this;
 }
 
--(void)drawRect:(CGRect)rect{
-    /*
-    const CGFloat *color=CGColorGetComponents(self.popUpColor.CGColor);
-    
-    UIGraphicsBeginImageContext(CGSizeMake(30, 20));
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetRGBFillColor(ctx, color[0], color[1], color[2], 1);
-    UIColor* shadowColor = nil;
-    if(self.popUpShadowColor){
-        shadowColor = self.popUpShadowColor;
-    }
-    else{
-        shadowColor = [UIColor blackColor];
-    }
-    
-    CGContextSetShadowWithColor(ctx, CGSizeMake(0, 0), 7.0, shadowColor.CGColor);
-	CGPoint points[3] = { CGPointMake(15, 5), CGPointMake(25, 25),
-		CGPointMake(5,25)};
-    CGContextAddLines(ctx, points, 3);
-    CGContextClosePath(ctx);
-    CGContextFillPath(ctx);
-    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    CGRect imgframe=CGRectMake((self.showOnRect.origin.x+((self.showOnRect.size.width-30)/2)), ((self.showOnRect.size.height/2)+self.showOnRect.origin.y), 30, 13);
-    
-    UIImageView *img=[[UIImageView alloc] initWithImage:viewImage highlightedImage:nil];
-    [self addSubview:img];
-    img.translatesAutoresizingMaskIntoConstraints=NO;
-    NSDictionary *dict=NSDictionaryOfVariableBindings(img);
-    [img.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"H:|-%f-[img(%f)]",imgframe.origin.x,imgframe.size.width] options:NSLayoutFormatDirectionLeadingToTrailing  metrics:nil views:dict]];
-    [img.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|-%f-[img(%f)]",imgframe.origin.y,imgframe.size.height] options:NSLayoutFormatDirectionLeadingToTrailing  metrics:nil views:dict]];
-    UIFont* font = nil;
-    if(self.popUpFont){
-        font = self.popUpFont;
-    }
-    else{
-        font=[UIFont fontWithName:FontName size:FontSize];
-    }
-    
-    CGSize size=[self.strMsg boundingRectWithSize:CGSizeMake(self.fieldFrame.size.width-(PaddingInErrorPopUp*2), 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size;
-    size=CGSizeMake(ceilf(size.width), ceilf(size.height));
-    
-    UIView *view=[[UIView alloc] initWithFrame:CGRectZero];
-    [self insertSubview:view belowSubview:img];
-    view.backgroundColor=self.popUpColor;
-    view.layer.cornerRadius=5.0;
-    view.layer.shadowColor=[shadowColor CGColor];
-    view.layer.shadowRadius=5.0;
-    view.layer.shadowOpacity=1.0;
-    view.layer.shadowOffset=CGSizeMake(0, 0);
-    view.translatesAutoresizingMaskIntoConstraints=NO;
-    dict=NSDictionaryOfVariableBindings(view);
-    [view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"H:|-%f-[view(%f)]",self.fieldFrame.origin.x+(self.fieldFrame.size.width-(size.width+(PaddingInErrorPopUp*2))),size.width+(PaddingInErrorPopUp*2)] options:NSLayoutFormatDirectionLeadingToTrailing  metrics:nil views:dict]];
-    [view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|-%f-[view(%f)]",imgframe.origin.y+imgframe.size.height,size.height+(PaddingInErrorPopUp*2)] options:NSLayoutFormatDirectionLeadingToTrailing  metrics:nil views:dict]];
-
-    UILabel *lbl=[[UILabel alloc] initWithFrame:CGRectZero];
-    lbl.font=font;
-    lbl.numberOfLines=0;
-    lbl.backgroundColor=[UIColor clearColor];
-    lbl.text=self.strMsg;
-    if(self.popUpFontColor){
-        lbl.textColor = self.popUpFontColor;
-    }
-    else{
-        lbl.textColor=ColorFont;
-    }
-    [view addSubview:lbl];
-    
-    lbl.translatesAutoresizingMaskIntoConstraints=NO;
-    dict=NSDictionaryOfVariableBindings(lbl);
-    [lbl.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"H:|-%f-[lbl(%f)]",(float)PaddingInErrorPopUp,size.width] options:NSLayoutFormatDirectionLeadingToTrailing  metrics:nil views:dict]];
-    [lbl.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|-%f-[lbl(%f)]",(float)PaddingInErrorPopUp,size.height] options:NSLayoutFormatDirectionLeadingToTrailing  metrics:nil views:dict]];
-     //*/
-}
     
 -(void)layoutSubviews{
     [super layoutSubviews];
@@ -301,15 +225,15 @@
         [delegate textFieldDidEndEditing:textField];
     [popUp removeFromSuperview];
     if(validateOnResign)
-        [(TextFieldValidator *)textField validate];
+        [(AETextFieldValidator *)textField validate];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    [(TextFieldValidator *)textField dismissPopup];
+    [(AETextFieldValidator *)textField dismissPopup];
     if(validateOnCharacterChanged)
-        [(TextFieldValidator *)textField performSelector:@selector(validate) withObject:nil afterDelay:0.1];
+        [(AETextFieldValidator *)textField performSelector:@selector(validate) withObject:nil afterDelay:0.1];
     else
-        [(TextFieldValidator *)textField setRightView:nil];
+        [(AETextFieldValidator *)textField setRightView:nil];
     if([delegate respondsToSelector:@selector(textField:shouldChangeCharactersInRange:replacementString:)])
         return [delegate textField:textField shouldChangeCharactersInRange:range replacementString:string];
     return YES;
@@ -334,8 +258,7 @@
 @end
 
 
-@interface TextFieldValidator(){
-//    NSString *strLengthValidationMsg;
+@interface AETextFieldValidator(){
     TextFieldValidatorSupport *supportObj;
     NSString *strMsg;
     NSMutableArray *arrRegx;
@@ -346,7 +269,7 @@
 
 @end
 
-@implementation TextFieldValidator
+@implementation AETextFieldValidator
 @synthesize presentInView,validateOnCharacterChanged,popUpColor,isMandatory,validateOnResign,errorImg;
 
 #pragma mark - Default Methods of UIView
@@ -372,7 +295,7 @@
     validateOnCharacterChanged=YES;
     isMandatory=YES;
     validateOnResign=YES;
-//    strLengthValidationMsg=[kMsgValidateLength copy];
+
     supportObj=[[TextFieldValidatorSupport alloc] init];
     supportObj.validateOnCharacterChanged=validateOnCharacterChanged;
     supportObj.validateOnResign=validateOnResign;
@@ -401,13 +324,8 @@
     [arrRegx addObject:dic];
 }
 
-/*
--(void)updateLengthValidationMsg:(NSString *)msg{
-    strLengthValidationMsg=[msg copy];
-}
-//*/
 
--(void)addConfirmValidationTo:(TextFieldValidator *)txtConfirm withMsg:(NSString *)msg{
+-(void)addConfirmValidationTo:(AETextFieldValidator *)txtConfirm withMsg:(NSString *)msg{
     NSDictionary *dic=[[NSDictionary alloc] initWithObjectsAndKeys:txtConfirm,@"confirm",msg,@"msg", nil];
     [arrRegx addObject:dic];
 }
@@ -429,7 +347,7 @@
     for (int i=0; i<[arrRegx count]; i++) {
         NSDictionary *dic=[arrRegx objectAtIndex:i];
         if([dic objectForKey:@"confirm"]){
-            TextFieldValidator *txtConfirm=[dic objectForKey:@"confirm"];
+            AETextFieldValidator *txtConfirm=[dic objectForKey:@"confirm"];
             if(![txtConfirm.text isEqualToString:self.text]){
                 [self showErrorIconForMsg:[dic objectForKey:@"msg"]];
                 return NO;
@@ -466,7 +384,7 @@
     UIButton *btnError=[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
     [btnError addTarget:self action:@selector(tapOnError) forControlEvents:UIControlEventTouchUpInside];
     
-    NSBundle* bundle = [NSBundle bundleForClass:[TextFieldValidator class]];
+    NSBundle* bundle = [NSBundle bundleForClass:[AETextFieldValidator class]];
     UIImage* img;
     if(!self.errorImg){
         img = [UIImage imageNamed:kIconImageName inBundle:bundle compatibleWithTraitCollection:nil];
