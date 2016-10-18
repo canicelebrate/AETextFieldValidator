@@ -1,15 +1,15 @@
 //
 //  ViewController.h
-//  AETextFieldValidatorDemo
+//  TextFieldValidationDemo
 //
-//  Created by WangLin on 2016/10/18.
-//  Copyright © 2016年 amberease. All rights reserved.
+//  Created by Dhawal.Dawar on 05/06/14.
+//  Copyright (c) 2014 Dhawal.Dawar. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController{
+    
+}
 
 @end
-

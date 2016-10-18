@@ -15,6 +15,8 @@
 		C2D1BCFE1DB67020005ECD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D1BCFC1DB67020005ECD6F /* LaunchScreen.storyboard */; };
 		C2D1BD091DB67020005ECD6F /* AETextFieldValidatorDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D1BD081DB67020005ECD6F /* AETextFieldValidatorDemoTests.m */; };
 		C2D1BD141DB67020005ECD6F /* AETextFieldValidatorDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D1BD131DB67020005ECD6F /* AETextFieldValidatorDemoUITests.m */; };
+		C2D1BD251DB6707D005ECD6F /* AETextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D1BD231DB6707D005ECD6F /* AETextFieldValidator.m */; };
+		C2D1BD261DB6707D005ECD6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D1BD241DB6707D005ECD6F /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		C2D1BD0F1DB67020005ECD6F /* AETextFieldValidatorDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AETextFieldValidatorDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D1BD131DB67020005ECD6F /* AETextFieldValidatorDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AETextFieldValidatorDemoUITests.m; sourceTree = "<group>"; };
 		C2D1BD151DB67020005ECD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D1BD221DB6707D005ECD6F /* AETextFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AETextFieldValidator.h; sourceTree = "<group>"; };
+		C2D1BD231DB6707D005ECD6F /* AETextFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AETextFieldValidator.m; sourceTree = "<group>"; };
+		C2D1BD241DB6707D005ECD6F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		C2D1BCE21DB67020005ECD6F = {
 			isa = PBXGroup;
 			children = (
+				C2D1BD211DB6707D005ECD6F /* AETextFieldValidator */,
 				C2D1BCED1DB67020005ECD6F /* AETextFieldValidatorDemo */,
 				C2D1BD071DB67020005ECD6F /* AETextFieldValidatorDemoTests */,
 				C2D1BD121DB67020005ECD6F /* AETextFieldValidatorDemoUITests */,
@@ -138,6 +144,16 @@
 				C2D1BD151DB67020005ECD6F /* Info.plist */,
 			);
 			path = AETextFieldValidatorDemoUITests;
+			sourceTree = "<group>";
+		};
+		C2D1BD211DB6707D005ECD6F /* AETextFieldValidator */ = {
+			isa = PBXGroup;
+			children = (
+				C2D1BD221DB6707D005ECD6F /* AETextFieldValidator.h */,
+				C2D1BD231DB6707D005ECD6F /* AETextFieldValidator.m */,
+				C2D1BD241DB6707D005ECD6F /* Images.xcassets */,
+			);
+			path = AETextFieldValidator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2D1BCFE1DB67020005ECD6F /* LaunchScreen.storyboard in Resources */,
+				C2D1BD261DB6707D005ECD6F /* Images.xcassets in Resources */,
 				C2D1BCFB1DB67020005ECD6F /* Assets.xcassets in Resources */,
 				C2D1BCF91DB67020005ECD6F /* Main.storyboard in Resources */,
 			);
@@ -275,6 +292,7 @@
 			files = (
 				C2D1BCF61DB67020005ECD6F /* ViewController.m in Sources */,
 				C2D1BCF31DB67020005ECD6F /* AppDelegate.m in Sources */,
+				C2D1BD251DB6707D005ECD6F /* AETextFieldValidator.m in Sources */,
 				C2D1BCF01DB67020005ECD6F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

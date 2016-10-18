@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AETextFieldValidator.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //TextFieldValidator appearance customization
+    
+     [[TextFieldValidator appearance] setPopUpColor:[UIColor orangeColor]];
+     UIImage* img = [UIImage imageNamed:@"customError"];
+     [[TextFieldValidator appearance] setErrorImg:img];
+     
+     [[TextFieldValidator appearance] setPopUpShadowColor:[UIColor darkGrayColor]];
+     [[TextFieldValidator appearance] setPopUpShadowRadius:3.0f];
+     
+     [[TextFieldValidator appearance] setPopUpFont:[UIFont fontWithName:kFontName size:25]];
+     [[TextFieldValidator appearance] setMandatoryInvalidMsg:@"This field is required"];
+     [[TextFieldValidator appearance] setPopUpCornerRadius:5.0f];
+    
     return YES;
 }
 
