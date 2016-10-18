@@ -1,7 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = "AETextFieldValidator"
   s.version          = "1.1.1"
-  s.summary          = "A lightweight, customizable subclass of UITextField that supports multiple regex validations and provides a simple UI to provide validation feedback. Conforms to autolayout design and support appearance customization"
+  s.summary          = "A lightweight, customizable subclass of UITextField that supports multiple regex validations and provides a simple UI to provide validation feedback."
+  s.description  = <<-DESC
+  A lightweight, customizable subclass of UITextField that supports multiple regex validations and provides a simple UI to provide validation feedback.
+  It conforms to autolayout design and support appearance customization.
+
+                   DESC  
 
   s.homepage         = "https://github.com/canicelebrate/AETextFieldValidator"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
