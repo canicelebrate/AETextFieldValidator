@@ -10,6 +10,8 @@ See the original blog post of TextFieldValidator for details: https://dhawaldawa
 # AETextFieldValidator
 A lightweight, customizable subclass of UITextField that supports multiple regex validations and provides a simple UI to provide validation feedback. And rewrite to support appearance
 
+![AETextFieldValidator](https://github.com/canicelebrate/AETextFieldValidator/blob/master/Screenshot.png?raw=true)
+
 ## Setup
 ### Using [CocoaPods](http://cocoapods.org)
 1. Add the pod `AETextFieldValidator` to your [Podfile](http://guides.cocoapods.org/using/the-podfile.html).
