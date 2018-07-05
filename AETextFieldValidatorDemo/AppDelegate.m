@@ -17,18 +17,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //TextFieldValidator appearance customization
+    //AETextFieldValidator appearance customization
     
-     [[TextFieldValidator appearance] setPopUpColor:[UIColor orangeColor]];
+     [[AETextFieldValidator appearance] setPopUpColor:[UIColor orangeColor]];
      UIImage* img = [UIImage imageNamed:@"customError"];
-     [[TextFieldValidator appearance] setErrorImg:img];
+     [[AETextFieldValidator appearance] setErrorImg:img];
      
-     [[TextFieldValidator appearance] setPopUpShadowColor:[UIColor darkGrayColor]];
-     [[TextFieldValidator appearance] setPopUpShadowRadius:3.0f];
+     [[AETextFieldValidator appearance] setPopUpShadowColor:[UIColor darkGrayColor]];
+     [[AETextFieldValidator appearance] setPopUpShadowRadius:3.0f];
      
-     [[TextFieldValidator appearance] setPopUpFont:[UIFont fontWithName:kFontName size:25]];
-     [[TextFieldValidator appearance] setMandatoryInvalidMsg:@"This field is required"];
-     [[TextFieldValidator appearance] setPopUpCornerRadius:5.0f];
+     [[AETextFieldValidator appearance] setPopUpFont:[UIFont fontWithName:kFontName size:25]];
+     [[AETextFieldValidator appearance] setMandatoryInvalidMsg:@"This field is required"];
+     [[AETextFieldValidator appearance] setPopUpCornerRadius:5.0f];
     
     return YES;
 }
